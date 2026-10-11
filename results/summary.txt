@@ -1,0 +1,41 @@
+==============================================================================
+EXPERIMENT A: the paper's data distribution and scheduling policies
+==============================================================================
+
+Same kernel, same number of instructions in every row.
+The only difference is which memory bank serves the data.
+
+policy                                            time (ms)     CPI  speedup
+----------------------------------------------------------------------------
+Work-stealing, data on a far node (baseline)         12.279    9.81    1.00x
+Fine distribution, pages striped over banks           9.330    7.95    1.32x
+Locality-aware + coarse, data on near node            6.381    6.07    1.92x
+
+Speedup is measured against the work-stealing row, which is the baseline the paper uses.
+
+Where the memory traffic actually went (proof the placement worked):
+
+  Work-stealing, data on a far node (baseline)    b0:  0.3%  b1:  0.0%  b2:  0.0%  b3: 99.7%
+  Fine distribution, pages striped over banks     b0: 25.2%  b1: 24.8%  b2: 24.8%  b3: 25.1%
+  Locality-aware + coarse, data on near node      b0: 99.7%  b1:  0.0%  b2:  0.0%  b3:  0.3%
+
+Average cost of one L2 miss, in ticks (1 tick = 1 ps):
+
+  Work-stealing, data on a far node (baseline)         226,713   (132,005 misses)
+  Fine distribution, pages striped over banks          137,353   (132,004 misses)
+  Locality-aware + coarse, data on near node            47,988   (132,004 misses)
+
+==============================================================================
+EXPERIMENT B: NUMA distance sweep (our version of Figure 2)
+==============================================================================
+
+Identical program, identical data placement. We only change how far away
+the bank holding the data is. Everything that moves here is pure NUMA cost.
+
+  bank latency   time (ms)     CPI   slowdown
+---------------------------------------------
+         30 ns       6.381    6.07      1.00x
+         90 ns       8.359    7.60      1.31x
+        150 ns      10.337    9.13      1.62x
+        210 ns      12.315   10.66      1.93x
+

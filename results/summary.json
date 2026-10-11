@@ -1,0 +1,100 @@
+{
+  "work_stealing_remote": {
+    "sim_seconds": 0.012279,
+    "cycles": 123720385.0,
+    "instructions": 12608347.0,
+    "cpi": 9.81257773124423,
+    "l2_misses": 132005.0,
+    "l2_miss_latency_ticks": 226713.22298397787,
+    "bank_accesses": [
+      718.0,
+      0.0,
+      0.0,
+      246736.0
+    ]
+  },
+  "fine_interleaved": {
+    "sim_seconds": 0.00933,
+    "cycles": 100217800.0,
+    "instructions": 12608347.0,
+    "cpi": 7.948528066367463,
+    "l2_misses": 132004.0,
+    "l2_miss_latency_ticks": 137353.36050422714,
+    "bank_accesses": [
+      62352.0,
+      61467.0,
+      61443.0,
+      62189.0
+    ]
+  },
+  "locality_aware_coarse": {
+    "sim_seconds": 0.006381,
+    "cycles": 76531091.0,
+    "instructions": 12608347.0,
+    "cpi": 6.069875059752083,
+    "l2_misses": 132004.0,
+    "l2_miss_latency_ticks": 47987.95491045726,
+    "bank_accesses": [
+      246705.0,
+      0.0,
+      0.0,
+      747.0
+    ]
+  },
+  "dist_30ns": {
+    "sim_seconds": 0.006381,
+    "cycles": 76531091.0,
+    "instructions": 12608347.0,
+    "cpi": 6.069875059752083,
+    "l2_misses": 132004.0,
+    "l2_miss_latency_ticks": 47987.95491045726,
+    "bank_accesses": [
+      246705.0,
+      0.0,
+      0.0,
+      747.0
+    ]
+  },
+  "dist_90ns": {
+    "sim_seconds": 0.008359,
+    "cycles": 95821349.0,
+    "instructions": 12608347.0,
+    "cpi": 7.59983437955824,
+    "l2_misses": 132003.0,
+    "l2_miss_latency_ticks": 107793.24333537873,
+    "bank_accesses": [
+      246705.0,
+      0.0,
+      0.0,
+      747.0
+    ]
+  },
+  "dist_150ns": {
+    "sim_seconds": 0.010337,
+    "cycles": 115110610.0,
+    "instructions": 12608347.0,
+    "cpi": 9.129714624764055,
+    "l2_misses": 132003.0,
+    "l2_miss_latency_ticks": 167597.94853147276,
+    "bank_accesses": [
+      246705.0,
+      0.0,
+      0.0,
+      747.0
+    ]
+  },
+  "dist_210ns": {
+    "sim_seconds": 0.012315,
+    "cycles": 134399788.0,
+    "instructions": 12608347.0,
+    "cpi": 10.65958828702922,
+    "l2_misses": 132002.0,
+    "l2_miss_latency_ticks": 227403.8991833457,
+    "bank_accesses": [
+      246705.0,
+      0.0,
+      0.0,
+      747.0
+    ]
+  }
+}
